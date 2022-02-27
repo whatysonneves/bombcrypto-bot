@@ -1,0 +1,192 @@
+---
+
+  # [en_US] Time intervals configuration
+  #
+  # [pt_BR] Configurações de intervalos de tempo
+  #
+  time_intervals:
+    # [pt_BR] Intervalo de tempo para enviar todos os heróis para trabalhar
+    # Valor padrão (em minutos): 90
+    send_all_heroes_for_work: 90
+
+    # [en_US] Time interval for check if there are available heroes to work
+    # Default value (in minutes): 10
+    #
+    # [pt_BR] Intervalo de tempo para verificar se há heróis disponíveis para trabalhar
+    # Valor padrão (em minutos): 10
+    send_heroes_for_work: 8
+
+    # [en_US] Time interval to update heroes position in the map,
+    # Default value (in minutes): 3
+    #
+    # [pt_BR] Intervalo de tempo para atualizar a posição dos heróis no mapa
+    # Valor padrão (em minutos): 3
+    refresh_heroes_positions: 4
+
+    # [en_US] Time interval to check for new maps
+    # Default value (in seconds): 5 
+    #
+    # [pt_BR] Intervalo de tempo para verificar por novos mapas
+    # Valor padrão (em segundos): 5
+    check_for_new_map_button: 4
+
+    # [en_US] Time interval to check for login request
+    # Default value (in minutes): 5
+    #
+    # [pt_BR] Intervalo de tempo para verificar se existe solicitação de login
+    # Valor padrão (em minutos): 5
+    check_for_login: 5
+
+    # [en_US] Time interval to check for login request
+    # Default value (in minutes): 5
+    #
+    # [pt_BR] Intervalo de tempo para verificar se existe solicitação de login
+    # Valor padrão (em minutos): 5
+    check_and_save_chest: 60
+
+    # [en_US] Time interval between moviments
+    # Default value (in seconds): 1 
+    #
+    # [pt_BR] Intervalo de tempo entre movimentos
+    # Valor padrão (em segundos): 1
+    interval_between_moviments: 0.2
+
+    # [pt_BR] Intervalo de tempo entre refresh da página
+    # Valor padrão (em segundos): start: 50 end: 100
+    refresh_interval:
+      start: 50
+      end: 100
+
+  # [en_US] How confident the bot needs to be to click the buttons (values from 0 to 1. 0 is the minimum value, 1 is the maximum value)
+  #
+  # [pt_BR] O quão confiante o bot precisa estar para clicar nos botões (valores entre 0 e 1. 0 é o valor mínimo, 1 é o valor máximo)
+  #
+  threshold:
+    # [en_US]
+    # Default value: 0.7
+    #
+    # [pt_BR]
+    # Valor padrão: 0.7
+    default: 0.7
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    commom: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    select_wallet_buttons: 0.8
+
+    # [en_US]
+    # Default value: 0.9
+    #
+    # [pt_BR]
+    # Valor padrão: 0.9
+    go_to_work_btn: 0.9
+
+    # [en_US]
+    # Default value: 0.9
+    #
+    # [pt_BR]
+    # Valor padrão: 0.9
+    green_bar: 0.9
+
+  home:
+    enable: False
+    # If bot is sending the wrong hero home, make this number bigger.
+    # if bot is not sending any hero home make this number smaller.
+    hero_threshold: 0.8
+    home_button_threshold: 0.9
+
+  # [en_US]
+  # Default value: 60
+  #
+  # [pt_BR]
+  # Valor padrão: 60
+  scroll_size: 75
+
+  # [en_US]
+  # Default value: 4
+  #
+  # [pt_BR]
+  # Valor padrão: 4
+  scroll_attemps: 4
+
+  # [en_US]
+  # Default value: true
+  #
+  # [pt_BR]
+  # Valor padrão: true
+  use_click_and_drag_instead_of_scroll: true
+
+  # [en_US]
+  # Default value: 200
+  #
+  # [pt_BR]
+  # Valor padrão: 200
+  click_and_drag_amount: 200
+
+  # [en_US]
+  # Default value: green
+  # Available options:
+  # all   = select all heroes (regardless of the stamina bar)
+  # green = select the heroes with green stamina bar (half or full)
+  # full  = select only the heroes with full stamina bar
+  #
+  # [pt_BR]
+  # Valor padrão: green
+  # Opções disponíveis:
+  # all   = seleciona todos os heróis (independente da barra de stamina)
+  # green = seleciona os heróis com a barra de stamina verde (metade ou cheia)
+  # full  = seleciona somente os heróis com a barra de stamina cheia
+  select_heroes_mode: "green"
+
+  # [en_US] Option for save logs to a file (logs.txt)
+  # Default value: False
+  # Available options: False or True
+  #
+  # [pt_BR] Opção para salvar os logs em arquivo (logs.txt)
+  # Valor padrão: False
+  # Opções disponíveis: False ou True
+  save_log_to_file: True
+
+  # [pt_BR] Selecione a língua da sua metamask para o bot funcionar corretamente
+  # Valor padrão: pt
+  # Opções disponíveis: pt ou en
+  metamask: "pt"
+
+  # [pt_BR] Recarrega a página de tempos em tempos
+  # Serve para se o jogo tiver algum erro como quando haviam blocos indestrutíveis
+  # Valor padrão: False
+  # Opções disponíveis: True ou False
+  refresh: False
+
+  chest_print:
+    save: True
+    only_number_to_ocr: False
+    attempts: 3
+    ocr: False
+    ocr_space_apikey: "helloworld"
+
+  # [pt_BR] Opção para registrar o log em um servidor remoto
+  # Bom para monitorar o bot de outro computador/sistema
+  # Valor padrão: False
+  # Opções disponíveis: False ou True
+  # Valor passado via POST: { "uuid": [GENERIC UUID], "message": message }
+  send_log_to_server: False
+  send_log_to_server_endpoint: "https://nftbrothers.games/bombcrypto/log"
+  disable_requests_warnings: True
+
+  # [pt_BR] Opção para registrar o valor farmado em um servidor remoto
+  # Bom para monitorar o bot de outro computador/sistema
+  # Valor padrão: False
+  # Opções disponíveis: False ou True
+  # Valor passado via POST: { "uuid": [GENERIC UUID], "value": value, "contract": contract }
+  send_chest_value_to_server: False
+  send_chest_value_to_server_endpoint: "https://nftbrothers.games/bombcrypto/earning"
