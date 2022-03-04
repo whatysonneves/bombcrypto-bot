@@ -258,7 +258,6 @@ def goToGame():
 
 def login():
 	global login_attempts
-	logger("Checking if game has disconnected")
 
 	if login_attempts > 3:
 		logger("Too many login attempts, refreshing")
@@ -266,9 +265,11 @@ def login():
 		pyautogui.hotkey("ctrl", "shift", "r")
 		return
 
-	if clickBtn(images["connect-wallet"], timeout = 10):
+	logger("Checking if game has disconnected")
+
+	if clickBtn(images["connect"], timeout = 10):
+		logger("Connect button detected, logging in!")
 		clickBtn(images["connect-metamask"], timeout = 3)
-		logger("Connect wallet button detected, logging in!")
 		login_attempts = login_attempts + 1
 
 	if c["metamask"] == "pt":
@@ -371,7 +372,7 @@ def checkLogin():
 		pyautogui.hotkey("ctrl", "shift", "r")
 		time.sleep(10)
 
-	if checkIfExists("connect-wallet"):
+	if checkIfExists("connect"):
 		if checkServer():
 			login()
 			return True
