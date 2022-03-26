@@ -305,7 +305,7 @@ def getChestPositions(target, threshold = 0.7, img = printScreen()):
 
 		x, y, w, h = chest[0]
 		nx = x + w
-		ny = y + 47
+		ny = y + 40
 		return [x, y, nx, ny, w, h]
 
 	return False
@@ -324,10 +324,10 @@ def cropAndSaveChestPrint(target, img = printScreen()):
 				monitor = {"left": int(positions[0] - 3), "top": int(positions[1] - 3), "width": int(positions[4] + 90), "height": 47}
 		else:
 			if c["chest_print"]["only_number_to_ocr"]:
-				monitor = {"left": int(positions[0]), "top": int(positions[1]+positions[5]), "width": int(positions[4]), "height": 47}
+				monitor = {"left": int(positions[2]), "top": int(positions[1]), "width": int(positions[4]), "height": int(positions[5])}
 			else:
-				monitor = {"left": int(positions[0]), "top": int(positions[1]), "width": int(positions[4]), "height": int(positions[5] + 47)}
-		output = "./prints/"+dateFormatted("%Y-%m-%d-%H-%M-%S")+"-"+target+".png"
+				monitor = {"left": int(positions[0]), "top": int(positions[1]), "width": int(positions[4]), "height": int(positions[5] + 40)}
+		output = "./prints/" + dateFormatted("%Y-%m-%d-%H-%M-%S") + "-" + target + ".png"
 		sct_img = sct.grab(monitor)
 		mss.tools.to_png(sct_img.rgb, sct_img.size, output = output)
 	return output
